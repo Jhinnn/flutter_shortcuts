@@ -39,7 +39,9 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
 
-    print('vip功能已经开发完成了');
+    for (var i = 0; i < 100; i++) {
+      print('vip功能已经开发完成了---$i');
+    }
   }
 
   @override
@@ -96,12 +98,28 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Vip',
-        child: const Icon(Icons.add),
+      floatingActionButton: Column(
+        children: [
+          FloatingActionButton(
+            onPressed: _incrementCounter,
+            tooltip: 'Vip',
+            child: const Icon(Icons.add),
+          ),
+           FloatingActionButton(
+            onPressed: _incrementCounter1,
+            tooltip: 'Vip2',
+            child: const Icon(Icons.add),
+          ),
+        ],
       ),
     );
+  }
+
+  void _incrementCounter1() {
+
+    for (var i = 0; i < 10; i++) {
+      print('这是什么数字$i');
+    }
   }
 }
 
